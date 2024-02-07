@@ -15,7 +15,7 @@ img, embed, object, video, picture {
   
   /* ---Mini CSS reset--- */
   
-  body, p, h1, h2, h3, h4, h5 {
+  body, section, h1, h2, h3, h4, h5 {
      margin: 0px; 
      padding: 0px;
   }
@@ -25,18 +25,6 @@ img, embed, object, video, picture {
   .hidden {
      display: none;
   }
-  
-  .box {
-     background-color: powderblue;
-     color: rgb(27, 27, 27);
-     border-radius: 5px;
-     padding: 20px;
-     text-align: right;
-     margin-top: -110px;
-     margin-bottom:10px;
-     display: flex;
-     z-index: 1;
-   }
   
   
   

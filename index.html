@@ -9,35 +9,44 @@
         <title>MusicMIxer</title>
     </head>
     <body>
-        <section id="drop-down">
-            <header>
-                <h1 class="hidden"> MusicMIxer</h1>
-                <img id="main-logo" src="images/logo.svg" alt="color-bg" class=" col-start-6 col-span-5">
-            </header>
-            <nav id="main-nav" class="col-span-full">
-                <h2 class="hidden">Main Navigation</h2>
-                
-                <input type="checkbox" id="hamburger">
-                <label for="hamburger">
-                  <img src="images/burger.svg" alt="hamburger menu icon">
-                  
-                </label>
-                <p>Reggae Mix</p>
-                <div id="burger-con">
-                  <ul>
-                    <li><a href="#">Track 1</a></li>
-                    <li><a href="#">Track 2</a></li>
-                    <li><a href="#">Track 3</a></li>
-                    <li><a href="#">Track 4</a></li>
-                    <li><a href="#">Track 5</a></li>
-                    <li><a href="#">Track 6</a></li>
-                  </ul>
-                </div>
-              </nav>
-             
-        </section>
-       
-        <section>
+        <header id="bab" class="grid-con">
+            <h1 class="hidden"> MusicMIxer</h1>
+         <section id="main-logo" class=" col-start-1 col-span-2">
+            <img  src="images/logo.svg" alt="color-bg" >
+         </section>
+
+         
+           
+         <nav id="main-nav" class="col-start-3 col-span-7">
+            <h2 class="hidden">Main Navigation</h2>
+            <div id="burger-con">
+              <ul>
+                <li><a href="#">Track 1</a></li>
+                <li><a href="#">Track 2</a></li>
+                <li><a href="#">Track 3</a></li>
+                <li><a href="#">Track 4</a></li>
+                <li><a href="#">Track 5</a></li>
+                <li><a href="#">Track 6</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <div id="main-navv" class="col-start-11 col-span-2">
+            <p >Reggae Mix</p>
+            
+            <input type="checkbox" id="hamburger">
+                        <label for="hamburger">
+                          <img src="images/burger.svg" alt="hamburger menu icon">
+                          
+                        </label>
+        </div>
+
+                      
+        </header>
+        <!-- next section-->
+        <section id="dj-main" class="grid-con">
+
+        <div class="col-start-1 col-end-8">
 
             <h2 class="hidden"> Character Nav</h2>
             <nav id="dj-spin">
@@ -56,64 +65,221 @@
                     </li>
                 </ul>
                </nav>
-        </section>
-        <main>
+            </div>
+
+             <!-- ======Instrument Drag Section==================== -->
+         <section id="instruments" class="col-start-8 col-end-12" >
             <h2 class="hidden"> Character Nav</h2>
-            <nav id="character-nav">
+            <nav id="character-nav" >
                 <ul class="characters">
                     <li>
                         <div class="img-wrapper">
                             <img src="images/drums.svg" alt="">
                         </div>
-                        <input type="checkbox"><span> Pick Me!</span>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
                     </li>
                     <li id="">
                         <div class="img-wrapper">
                             <img src="images/guitar.svg" alt="">
                         </div>
-                        <input type="checkbox"><span> Pick Me!</span>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
                     </li>
+                    <br>
                     <li id="">
                         <div class="img-wrapper">
                             <img src="images/piano.svg" alt="">
                         </div>
-                        <input type="checkbox"><span> Pick Me!</span>
-                    </li>
-                    <li id="">
-                        <div class="img-wrapper">
-                            <img src="images/trumpet.svg" alt="">
-                        </div>
-                        <input type="checkbox"><span> Pick Me!</span>
-                    </li>
-                    <li id="">
-                        <div class="img-wrapper">
-                            <img src="images/drums.svg" alt="">
-                        </div>
-                        <input type="checkbox"><span> Pick Me!</span>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
                     </li>
                     <li id="">
                         <div class="img-wrapper">
                             <img src="images/guitar.svg" alt="">
                         </div>
-                        <input type="checkbox"><span> Pick Me!</span>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
+                    </li>
+                    
+                    <li id="">
+                        <div class="img-wrapper">
+                            <img src="images/drums.svg" alt="">
+                        </div>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
+                    </li>
+                    <li id="">
+                        <div class="img-wrapper">
+                            <img src="images/guitar.svg" alt="">
+                        </div>
+                        <!-- <input type="checkbox"> -->
+                        <span> Drag Me!</span>
                     </li>
                 </ul>
 
             </nav>
+        </section>
+        </section>
+
+        <section id="mixer-control" class="grid-con">
+
+            <h2 class="hidden"> Media Control</h2>
+
+         <nav id="control-nav" >
+            <ul class="media-control">
+                <li id="minus-button">
+                    <div class="img-wrapper">
+                        <img src="images/minus-button.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    
+                </li>
+                <li id="play-button">
+                    <div class="img-wrapper">
+                        <img src="images/play-button.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    
+                </li>
+                <br>
+                <li id="pause-button">
+                    <div class="img-wrapper">
+                        <img src="images/pause-button.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    
+                </li>
+                <li id="plus-button">
+                    <div class="img-wrapper">
+                        <img src="images/plus-button.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    
+                </li>
+               
+            </ul>
+
+        </nav>
+    </section>
+
+      
+      <section id="drop-section"  class="grid-con">
+        <h2 class="hidden"> Character Nav</h2>
+
+        <!-- ======Instrument Drop Section==================== -->
+
+        <div id="drop-instrument">
+        <nav id="drop-nav" >
+            <ul class="drop-box">
+                <li>
+                    <div class="img-wrapper">
+                        <img src="images/drums.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+                <li id="">
+                    <div class="img-wrapper">
+                        <img src="images/guitar.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+                <br>
+                <li id="">
+                    <div class="img-wrapper">
+                        <img src="images/piano.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+                <li id="">
+                    <div class="img-wrapper">
+                        <img src="images/guitar.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+                
+                <li id="">
+                    <div class="img-wrapper">
+                        <img src="images/drums.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+                <li id="">
+                    <div class="img-wrapper">
+                        <img src="images/guitar.svg" alt="">
+                    </div>
+                    <!-- <input type="checkbox"> -->
+                    <span> Drop Here!</span>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <div id="effect-section" >
+
+        <h2 class="hidden"> Media Control</h2>
+
+     <nav id="effect-nav" >
+        <ul class="effect-control">
+            <li id="echo">
+                <div class="img-wrapper">
+                    <span> Echo</span>
+                </div>
+                <!-- <input type="checkbox"> -->
+                
+            </li>
+            <li id="scracth">
+                <div class="img-wrapper">
+                    <span> Scracth</span>
+                </div>
+                <!-- <input type="checkbox"> -->
+                
+            </li>
+            <br>
+            <li id="reverb">
+                <div class="img-wrapper">
+                    <span> Reverb</span>
+                </div>
+                <!-- <input type="checkbox"> -->
+                
+            </li>
+            <li id="pitch">
+                <div class="img-wrapper">
+                    <span> Pitch</span>
+                </div>
+                <!-- <input type="checkbox"> -->
+                
+            </li>
            
-        </main>
+        </ul>
 
+    </nav>
+</div>
 
-        <footer class="sticky-footer"> 
-            <p class="">All Image &copy; MusicMIxer  </p>
+    </section>
+
+    <!-- =====Footer==== -->
+
+    <footer class=" grid-con" > 
+        <h2 class=" sticky-footer col-start-1 col-span-2">All Image &copy; MusicMIxer  </h2>
+    
+        <h2 class="sticky-footer col-start-3 col-span-6">Pick Your Instruments!  Use the checkbox to add your instruments to any song</h2>
+       <h2 class=" sticky-footer author col-start-9 col-span-3">By:Amari &amp; Emmanuel</h2>
         
-            <p>Pick Your Instruments!  Use the checkbox to add your instruments to any song</p>
-           <p class="author">By:Amari &amp; Emmanuel</p>
-            
 
-        </footer>
+    </footer>
 
-        <script></script>
+    <script></script>
+
+        
+
+        
     
     </body>
 

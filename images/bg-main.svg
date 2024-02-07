@@ -14,13 +14,13 @@
   #bg-stripe1 {
   width: 100%; 
   height: 50px; 
-  animation: rotate 120s linear infinite; 
+  animation: rotate 10s linear infinite; 
    transform-origin: center;
 }
 #bg-stripe2 {
   width: 100%; 
   height: 50px; 
-  animation: move 120s linear infinite; 
+  animation: move 50s linear infinite; 
    
 }
 
