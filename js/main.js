@@ -1,24 +1,20 @@
-(function(){
-	"use strict";	
-	console.log("fired");
+(()=>{
+	console.log("JS CONNECTED");
 
-	let button = document.querySelector("#button");
-	let burgerCon = document.querySelector("#burger-con");
+	let button = document.querySelector('#hamburger');
+	let burgerCon = document.querySelector('.burger-con');
+	
+	
 
+	
+// START Function for Menu bar toggle attribute
 	function hamburgerMenu() {
-		burgerCon.classList.toggle("slide-toggle");
-		button.classList.toggle("expanded");
+		burgerCon.classList.toggle('burger-con');
+		console.log("appear");
 	};
+// END Function for Menu bar toggle attribute
 
-	// let hamburgerMenu = () => {
-	// 	burgerCon.classList.toggle("slide-toggle");
-	// 	button.classList.toggle("expanded");
-	// };
-
-	button.addEventListener("click", hamburgerMenu, false);		
+	button.addEventListener("click", hamburgerMenu, false);	
+		
+	
 })();
-
-//Can also be written like this:
-//(() => {  })();   
-
-// Info about IIFE https://flaviocopes.com/javascript-iife/
