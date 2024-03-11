@@ -12,6 +12,7 @@
         <header id="bab" class="grid-con">
             <h1 class="hidden"> MusicMIxer</h1>
          <section id="main-logo" class=" col-start-1 col-span-2">
+            <h2 class="hidden">Head Logo</h2>
             <img  src="images/logo.svg" alt="color-bg" >
          </section>
 
@@ -19,17 +20,41 @@
            
          <nav id="main-nav" class="col-start-5 col-span-6">
             <h2 class="hidden">Main Navigation</h2>
+            
             <div class="burger-con">
-              <ul>
-                <li><a href="#">Track 1</a></li>
-                <li><a href="#">Track 2</a></li>
-                <li><a href="#">Track 3</a></li>
+                <audio id="audioMain" src="audio/track-3-Main.wav"></audio>
+              <ul id="track-list">
+                <li><p>Track 1 
+                </p> 
+                 <audio class="audioTrack" 
+                 data-trackref="Track1" 
+                 src="audio/track-1-Main.wav">
+              </audio>
+                 </li>
+<!-- --------------------------------------- -->
+                <li><p>Track 2
+                </p> 
+                    <audio class="audioTrack" 
+                    data-trackref="Track2" 
+                    src="audio/track-2-Main.wav">
+                 </audio>
+                
+            </li>
+            <!-- ------------------------------------ -->
+                <li><p>Track 3 
+                </p> 
+                    <audio class="audioTrack" 
+                    data-trackref="Track3" 
+                    src="audio/track-3-Main.wav">
+                 </audio>
+                
+            </li>
               </ul>
             </div>
           </nav>
 
           <div id="main-navv" class="col-start-11 col-span-2">
-            <p >Track Menu</p>
+            <p >Select Track</p>
             
             <input type="checkbox" id="hamburger" class="">
                         <label for="hamburger">
@@ -51,13 +76,13 @@
             <h2 class="hidden"> Character Nav</h2>
             <nav id="dj-spin">
                 <ul class="dj">
-                    <li>
+                    <li class="jockey">
                         <div class="img-wrapper">
                             <img src="images/spin-deck.svg" alt="">
                         </div>
                         <!-- <input type="checkbox"><span> Pick Me!</span> -->
                     </li>
-                    <li id="">
+                    <li class="jockey">
                         <div class="img-wrapper">
                             <img src="images/spin-deck.svg" alt="">
                         </div>
@@ -70,7 +95,21 @@
             <section id="mixer-control" class="col-start-5 col-span-6" >
 
                 <h2 class="hidden"> Media Control</h2>
-    
+    <!-- track display -->
+
+    <nav id="track-display" >
+        <button>
+            
+            <span> 
+                <h4 id="minus-dis">  </h4>
+                Playing Track 1 
+                <h4 id="plus-dis"> </h4>
+            </span>
+            
+          </button>
+    </nav>
+
+    <!-- control Nav -->
              <nav id="control-nav" >
                 <ul class="media-control">
                     <li id="minus-button">
@@ -87,7 +126,7 @@
                         <!-- <input type="checkbox"> -->
                         
                     </li>
-                    <br>
+                    
                     <li id="pause-button">
                         <div class="img-wrapper">
                             <img src="images/pause-button.svg" alt="">
@@ -134,7 +173,7 @@
             <!-- <input type="checkbox"> -->
             
         </li>
-        <br>
+      
         <li id="reverb">
             <div class="img-wrapper">
                 <span> Reverb</span>
@@ -175,7 +214,7 @@
                 <!-- <input type="checkbox"> -->
                 <span> Drop Here!</span>
             </li>
-            <br>
+          
             <li id="">
                 <div class="img-wrapper">
                     <img src="images/piano.svg" alt="">
@@ -234,7 +273,7 @@
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
                     </li>
-                    <br>
+                  
                     <li id="">
                         <div class="img-wrapper">
                             <img src="images/piano.svg" alt="">
@@ -280,11 +319,12 @@
     <!-- =====Footer==== -->
 
     <footer class=" grid-con" > 
+       
         <h2 class=" sticky-footer col-start-1 col-span-2">All Image &copy; MusicMIxer  </h2>
     
         <h2 class="sticky-footer col-start-3 col-span-6">Pick Your Instruments!  Use the checkbox to add your instruments to any song</h2>
        <h2 class=" sticky-footer author col-start-9 col-span-3">By:Amari &amp; Emmanuel</h2>
-        
+    
 
     </footer>
 

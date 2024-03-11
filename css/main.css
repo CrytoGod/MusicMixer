@@ -58,7 +58,7 @@ p{
     margin-left: 30px;
   }
 
-  #main-nav ul li a {
+  #main-nav ul li p {
     
     display: inline;
     padding: 10px 10px 10px 10px;
@@ -67,7 +67,9 @@ p{
     /* background-color: rgb(255, 255, 255); */
     text-decoration: none;
     transition: all .5s ease-in-out;
+    cursor: pointer;
   }
+
 input{
     display: none;
 }
@@ -145,6 +147,21 @@ input{
     max-width: 100%;
 }
 
+.jockey {
+    position: relative;
+    animation: rotate 5s linear infinite; 
+}
+
+/* Define the rotation animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg); 
+    }
+}
+
 
 /* ================= DRAG ======================== */
 #instruments{
@@ -206,6 +223,55 @@ input{
     display: block; /* Show the menu when the 'show-menu' class is present */
 }
 
+/* track display start */
+
+#track-display{
+    margin-top: -70px;
+    margin-bottom: 35px;
+}
+
+button {
+    padding:2px 1px;
+    width: 200px;
+    height: 35px;
+    background-color: #212121;
+    border: 1px solid #fff;
+    border-radius:3px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  
+  button span {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0.4em;
+    width:190px;
+    height: 25px;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 3px);
+    }
+}
+  
+
+
+/* track display end */
+
+
 /* Styles for mixer control */
 
 #mixer-control{
@@ -217,6 +283,7 @@ input{
     grid-row: 2/2;
     margin-top: -200px;
     margin-left: 150px;
+    
    
    
    
@@ -245,6 +312,7 @@ input{
     border: 4px solid #333;
     padding-top: 5px;
     text-align: center;
+    cursor: pointer;
 }
 
 .media-control li div {
@@ -396,12 +464,12 @@ div .img-wrapper span {
 /* =====footer ======*/
 
 footer {
-    display: flex;
+   
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 90px;
+    height: 55px;
     background-color: #000000;
     color: #000000;
     text-align: center;
