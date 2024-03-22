@@ -26,26 +26,24 @@
               <ul id="track-list">
                 <li><p>Track 1 
                 </p> 
-                 <audio class="audioTrack" 
-                 data-trackref="Track1" 
-                 src="audio/track-1-Main.wav">
-              </audio>
+                <audio class="trackref" data-trackref="maintrack1" src="audio/maintrack1.wav"></audio>
+
                  </li>
 
                 <li><p>Track 2
                 </p> 
-                    <audio class="audioTrack" 
-                    data-trackref="Track2" 
-                    src="audio/track-2-Main.wav">
+                    <audio class="trackref" 
+                    data-trackref="maintrack2" 
+                    src="audio/maintrack2.wav">
                  </audio>
                 
             </li>
            
                 <li><p>Track 3 
                 </p> 
-                    <audio class="audioTrack" 
-                    data-trackref="Track3" 
-                    src="audio/track-3-Main.wav">
+                    <audio class="trackref" 
+                    data-trackref="maintrack3" 
+                    src="audio/maintrack3.wav">
                  </audio>
                 
             </li>
@@ -98,9 +96,10 @@
     <!-- track display -->
 
     <section id="track-display" >
+        <h2 class="hidden">Track Selector</h2>
         <nav>
              <div>  
-                <audio id="audioMain" src="audio/track-2-Main.wav"></audio>
+                <audio class="trackref" id="audioMain" src="audio/maintrack1.wav"></audio>
                 <h2 class="infoPlay">Select Track</h2>
             </div>
         </nav>
