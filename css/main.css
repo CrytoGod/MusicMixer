@@ -203,10 +203,7 @@ input{
 .characters li div {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
     overflow: hidden;
-    transform: rotate(-20deg);
     margin: 0 auto 16px auto;
 }
 
@@ -379,6 +376,11 @@ input{
     padding:0;
 }
 
+.droppings{
+    color: #ffffff;
+    font-weight: bolder;
+}
+
 .drop-box li {
     position: relative;
     width: 80px;
@@ -397,10 +399,7 @@ input{
 .drop-box li div {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
     overflow: hidden;
-    transform: rotate(-20deg);
     margin: 0 auto 16px auto;
 }
 
@@ -444,6 +443,35 @@ input{
     box-shadow:  inset 6px -6px 6px #00000036, 4px -2px 4px 0px #000000;
 
 }
+
+.dropeffectshadow {
+    box-shadow: inset 6px -6px 6px #00000036, 4px -2px 4px 0px #000000;
+    animation: shadowColorChange 6s ease-out forwards infinite;
+}
+
+@keyframes shadowColorChange {
+    0% {
+        box-shadow: inset 6px -6px 6px #ff000000, 4px -2px 4px 0px #ff0000;
+    }
+    20% {
+        box-shadow: inset 6px -6px 6px #ffbf0000, 4px -2px 4px 0px #ffbf00;
+    }
+    40% {
+        box-shadow: inset 6px -6px 6px #ffff0000, 4px -2px 4px 0px #ffff00;
+    }
+    60% {
+        box-shadow: inset 6px -6px 6px #00ff0000, 4px -2px 4px 0px #00ff00;
+    }
+    80% {
+        box-shadow: inset 6px -6px 6px #0000ff00, 4px -2px 4px 0px #0000ff;
+    }
+    100% {
+        box-shadow: inset 6px -6px 6px #80008000, 4px -2px 4px 0px #800080;
+    }
+}
+
+
+
 .effect-control li:nth-of-type(1) {
     background-color: rgb(242, 255, 0);
 }
