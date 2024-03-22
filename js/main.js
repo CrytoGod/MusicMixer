@@ -13,8 +13,70 @@
 	let trackList = document.getElementById('track-list');
     let infoPlay = document.querySelector('.infoPlay');
 	let trackItems = document.querySelectorAll('#track-list li');
+	let puzzlePieces = document.querySelectorAll('.img-wrapper img');
+	let dropZones = document.querySelectorAll('.undefined-drop .img-wrapper');
 	let selectedTrackName;
+	let draggedPiece = document.querySelectorAll('.img-wrapper img') ;
+	// let revPiece = document.querySelectorAll('.defined-drop img') ;
+	// let reverseDrag = document.querySelectorAll('.defined-drop img');
 
+	// revPiece.forEach(piece => { (((Trying to reverse a drag and drop back to drag state)))
+	// 	piece.addEventListener("dragstart", handleRevDrag);
+	// 	piece.addEventListener("dragover", handleDragOver);
+	// 	piece.addEventListener("drop", handleRevDrop);
+	// }); Do Not Un-comment this comment----lol
+
+	function handleStartDrag() { 
+		console.log('started dragging this piece:', this);
+		// store a reference to the puzzle piece image that we're dragging
+		// so we can use it later and move it to a drop zone
+		draggedPiece = this;
+	}
+	// function handleRevDrag() { (((Trying to reverse a drag and drop back to drag state)))
+	// 	console.log('started dragging this piece:', this);
+	// 	// store a reference to the puzzle piece image that we're dragging
+	// 	// so we can use it later and move it to a drop zone
+	// 	revPiece = this;
+	// } Do Not Un-comment this comment----lol
+
+	function handleDragOver(event) { 
+		event.preventDefault(); 
+		// this overrides the default dragover behaviour
+		console.log('dragged over me'); 
+	}
+
+
+	
+	function handleDrop(event) {
+		event.preventDefault();
+		console.log('dropping something on me');
+	
+		if (this.children.length === 0) {
+			this.appendChild(draggedPiece);
+		} else {
+			console.log('puzzle piece in zone ');
+		}
+		let dropZone = this.closest('.undefined-drop');
+    if (dropZone) {
+        dropZone.querySelector('span').textContent = 'Playing';
+		dropZone.querySelector('span').classList.add('droppings');
+    }
+	event.target.closest('li').classList.add('dropeffectshadow');
+	}
+
+	// function handleRevDrop(event) { (Trying to reverse a drag and drop back to drag state)
+	// 	event.preventDefault();
+	// 	console.log('dropping something on me');
+	
+	// 	if (this.children.length === 0) {
+	// 		this.appendChild(reverseDrag);
+	// 	} else {
+	// 		console.log('puzzle piece in zone ');
+	// 	}
+	
+  
+	// } Do Not Un-comment this comment----lol
+// ============================================================================
 	albumCovers.forEach(
 		cover => cover.addEventListener('click', loadAudio)
 	);
@@ -31,13 +93,6 @@
 	)
 
 
-	// trackList.addEventListener('click', function(event) {
-    //     let trackItem = event.target.closest('li');
-    //     if (trackItem) {
-    //         let trackName = trackItem.querySelector('p').textContent;
-    //         infoPlay.textContent = "Playing " + trackName;
-    //     }
-    // });
 
 	trackList.addEventListener('click', function(event) {
 		// Check if a track item was clicked (inside an <li> element)
@@ -74,29 +129,7 @@ function noSpan(){
 		
 	  }
 
-	// function loadAudio() {
-	// 	let trackRef = this.getAttribute('data-trackref');
-	// 	console.log("Track reference:", trackRef);
-	// 	if (trackRef) {
-	// 		let newSrc = `audio/${trackRef}.wav`;
-	// 		console.log("New source:", newSrc);
-	// 		theAudioEl.src = newSrc;
-	// 		theAudioEl.load();
-	// 	} else {
-	// 		console.error("No data-trackref attribute found on the element.");
-	// 	}
-	// }
-
-	// function loadAudio() {
-	// 	let trackRef = this.dataset.trackref;
-	// 	if (trackRef) {
-	// 		let newSrc = `audio/${trackRef}.wav`;
-	// 		this.src = newSrc;
-	// 		this.load();
-	// 	} else {
-	// 		console.error("No data-trackref attribute found on the audio element.");
-	// 	}
-	// }
+	
 	
 	
 function playAudio() {
@@ -170,7 +203,28 @@ document.addEventListener("DOMContentLoaded", function() {
 	effectControl.forEach(
 		shadow => shadow.addEventListener('click', shadowEffect)
 	);
-	
+	// =============================================
+	// dropZones.forEach(zone => {
+	// 	zone.addEventListener("dragstart", handleStartDrag);
+	// 	zone.addEventListener("dragover", handleDragOver);
+	// 	zone.addEventListener("drop", handleDrop);
+	// }); Do not even know what i am doing here!!!!!! All i can say Is FAT ARROW!
+	// =========================
+	puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
+
+// add the dragover AND the drop event handling to the drop zones
+dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
+
+// add the drop event handling
+dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+// reverseDrag.forEach(zone => zone.addEventListener("drop", handleDrop));
+// =========================================================================
+// puzzlePieces.forEach(piece => {
+//     piece.addEventListener("dragstart", handleStartDrag);
+//     piece.addEventListener("dragover", handleDragOver); // Allow dragging over drop zones
+//     piece.addEventListener("drop", handleDrop); // Allow dropping back to the drag zone
+// }); Do not even know what i am doing here!!!!!! All i can say Is FAT ARROW!
+
 
 	
 })();
