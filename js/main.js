@@ -7,6 +7,7 @@
 	let theAudioEl = document.querySelector('#track-display #audioMain');
 	let playButton = document.querySelector('#play-button');
 	let pauseButton = document.querySelector('#pause-button');
+	let reset = document.querySelector("#reset");
 	let spinPlates = document.querySelectorAll('.jockey');
 	let buttonSpan = document.querySelector('#track-display nav div');
 	let effectControl = document.querySelectorAll('.effect-control li');
@@ -17,10 +18,12 @@
 	let dropZones = document.querySelectorAll('.undefined-drop .img-wrapper');
 	let selectedTrackName;
 	let draggedPiece = document.querySelectorAll('.img-wrapper img') ;
+
 	let mainTrackPlaying = false;
 	let resetButton = document.querySelector('.inforeset');
 	// let audioElements = document.querySelectorAll('.mt-minis');
 	// let miniTracks = document.querySelectorAll('.img-wrapper audio') ;
+
 	// let revPiece = document.querySelectorAll('.defined-drop img') ;
 	// let reverseDrag = document.querySelectorAll('.defined-drop img');
 
@@ -265,6 +268,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 	};
 
+	function resetPuzzle() {
+		puzzlePieces.forEach(function(piece) {
+			if (piece.parentElement.classList.contains('drop-zone')) {
+				puzzleBoard.appendChild(piece);
+			}
+		});
+	
+		puzzlePieces.forEach(function(piece) {
+			document.querySelector(".img-wrapper").appendChild(piece);
+		});
+	
+		dropZones.forEach(function(zone) {
+			zone.style.backgroundImage = '';
+		});
+	}
+
 
 
 
@@ -290,6 +309,7 @@ dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
 // add the drop event handling
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+
 // reverseDrag.forEach(zone => zone.addEventListener("drop", handleDrop));
 // =========================================================================
 // puzzlePieces.forEach(piece => {
@@ -297,7 +317,7 @@ dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
 //     piece.addEventListener("dragover", handleDragOver); // Allow dragging over drop zones
 //     piece.addEventListener("drop", handleDrop); // Allow dropping back to the drag zone
 // }); Do not even know what i am doing here!!!!!! All i can say Is FAT ARROW!
-
+reset.addEventListener("click", resetPuzzle);
 
 	
 })();
