@@ -17,6 +17,10 @@
 	let dropZones = document.querySelectorAll('.undefined-drop .img-wrapper');
 	let selectedTrackName;
 	let draggedPiece = document.querySelectorAll('.img-wrapper img') ;
+	let mainTrackPlaying = false;
+	let resetButton = document.querySelector('.inforeset');
+	// let audioElements = document.querySelectorAll('.mt-minis');
+	// let miniTracks = document.querySelectorAll('.img-wrapper audio') ;
 	// let revPiece = document.querySelectorAll('.defined-drop img') ;
 	// let reverseDrag = document.querySelectorAll('.defined-drop img');
 
@@ -25,6 +29,13 @@
 	// 	piece.addEventListener("dragover", handleDragOver);
 	// 	piece.addEventListener("drop", handleRevDrop);
 	// }); Do Not Un-comment this comment----lol
+
+	function buttonReset() {
+		location.reload();
+	}
+	
+
+
 
 	function handleStartDrag() { 
 		console.log('started dragging this piece:', this);
@@ -61,6 +72,16 @@
         dropZone.querySelector('span').textContent = 'Playing';
 		dropZone.querySelector('span').classList.add('droppings');
     }
+	let minitrack = draggedPiece.getAttribute("data-minitrack");
+
+	if (mainTrackPlaying) {
+        let audio = document.querySelector(`audio[data-minitrack="${minitrack}"]`);
+        audio.loop = true;
+        audio.play();
+    }
+    
+
+
 	event.target.closest('li').classList.add('dropeffectshadow');
 	}
 
@@ -110,10 +131,54 @@
 	});
 	
 
-	function shadowEffect(event){
-		  event.target.closest('li').classList.toggle('effectshadow');
-		  console.log('Shadow Effect Added to Effect Controls')
+	function shadowEffect(event) {
+		// Remove the 'effectshadow' class from all 'li' elements with the class 'effect-control'
+		document.querySelectorAll('.effect-control li').forEach(function(item) {
+			item.classList.remove('effectshadow');
+		});
+	
+			
+	
+		// Add the 'effectshadow' class to the clicked 'li' element
+		let listItem = event.target.closest('li');
+		if (listItem) {
+			listItem.classList.add('effectshadow');
+			console.log('Shadow Effect Added to Effect Controls');
+	
+			// Check the id of the clicked element and apply corresponding changes
+			switch (listItem.id) {
+				case 'echo':
+					// Change HTML background image
+					document.getElementById('container').style.backgroundImage = 'url(images/dark.svg)';
+					break;
+				case 'scracth':
+					// Change container background image
+					document.getElementById('container').style.backgroundImage = 'url(images/grint.svg)';
+					
+					break;
+				case 'reverb':
+					// Change font color
+					document.getElementById('container').style.backgroundImage = 'url(images/hacp.svg)';
+					break;
+				case 'pitch':
+					// Change body background image
+					document.getElementById('container').style.backgroundImage = 'url(images/sci.svg)';
+					break;
+				default:
+					// Default case
+					break;
+			}
+		}
+	
 	}
+	
+	// Add event listener to the 'effect-control' list
+	document.querySelectorAll('.effect-control li').forEach(function(item) {
+		item.addEventListener('click', shadowEffect);
+	});
+	
+	
+	
 
 function noSpan(){
 	buttonSpan.style.animation = 'none';
@@ -124,7 +189,9 @@ function noSpan(){
 		theAudioEl.src = newSrc;
 		theAudioEl.dataset.trackref = this.dataset.trackref;
 		theAudioEl.load();
+
 		console.log("New source:", newSrc);
+		
 		
 		
 	  }
@@ -148,6 +215,8 @@ function playAudio() {
         // If no track has been selected
         console.log("No track selected. Cannot play.");
     }
+	mainTrackPlaying = true;
+	
 }
 
 
@@ -159,9 +228,12 @@ function playAudio() {
 			spinPlate.classList.remove('jockey');
 		});
 		buttonSpan.style.animation = 'none';
+	mainTrackPlaying = false;
+	
 
 		console.log("Disk Rotation Removed");
 		console.log("Paused");
+
 	}
 
 	audioMain.loop = true;
@@ -203,6 +275,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	effectControl.forEach(
 		shadow => shadow.addEventListener('click', shadowEffect)
 	);
+	resetButton.addEventListener('click', buttonReset);
 	// =============================================
 	// dropZones.forEach(zone => {
 	// 	zone.addEventListener("dragstart", handleStartDrag);
