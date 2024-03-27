@@ -50,6 +50,7 @@
               </ul>
             </div>
           </nav>
+        
 
           <div id="main-navv" class="col-start-11 col-end-13">
             <p >Select Track</p>
@@ -91,10 +92,22 @@
                 </ul>
                </nav>
             </div>
+              <!-- Reset button start -->
+              <section id="reset-display" >
+                <h2 class="hidden">Reset Selector</h2>
+                <nav>
+                     <div>  
+                      
+                        <h2 class="inforeset">Reset Track</h2>
+                    </div>
+                </nav>
+                </section>
+            <!-- Reset button End -->
             <!-- meda controls -->
             <section id="mixer-control" class="col-start-5 col-span-6" >
 
                 <h2 class="hidden"> Media Control</h2>
+              
     <!-- track display -->
 
     <section id="track-display" >
@@ -164,14 +177,14 @@
     <ul class="effect-control ">
         <li id="echo" class="effectshaddow">
             <div class="img-wrapper ">
-                <span> Echo</span>
+                <span> J</span>
             </div>
             <!-- <input type="checkbox"> -->
             
         </li>
         <li id="scracth" class="effectshaddow">
             <div class="img-wrapper">
-                <span> Scracth</span>
+                <span>A </span>
             </div>
             <!-- <input type="checkbox"> -->
             
@@ -179,14 +192,14 @@
       
         <li id="reverb" class="effectshdadow">
             <div class="img-wrapper">
-                <span> Reverb</span>
+                <span>V</span>
             </div>
             <!-- <input type="checkbox"> -->
             
         </li>
         <li id="pitch" class="effectshadodw">
             <div class="img-wrapper">
-                <span> Pitch</span>
+                <span> A</span>
             </div>
             <!-- <input type="checkbox"> -->
             
@@ -252,7 +265,18 @@
     </nav>
 </div>
 
+<!-- mini track start -->
+<div id="miniTrackers">
+    <audio data-minitrack="1" data-minisuffix="1" src="audio/mt11.wav" class="mt-minis"></audio>
+    <audio data-minitrack="1" data-minisuffix="2" src="audio/mt12.wav" class="mt-minis"></audio>
+    <audio data-minitrack="1" data-minisuffix="3" src="audio/mt13.wav" class="mt-minis"></audio>
+    <audio data-minitrack="1" data-minisuffix="4" src="audio/mt15.wav" class="mt-minis"></audio>
+    <audio data-minitrack="1" data-minisuffix="5" src="audio/mt15.wav" class="mt-minis"></audio>
+    <audio data-minitrack="1" data-minisuffix="6" src="audio/mt16.wav" class="mt-minis"></audio>
 
+</div>
+
+<!-- mini tracks end -->
 
 </section>
         
@@ -264,16 +288,18 @@
                 <ul class="characters">
                     <li class="defined-drop">
                         <div class="img-wrapper">
-                            <img src="images/drums.svg" class="puzzle-image" alt="" data-track="1">
-                            <audio id="audio1"></audio>
+                            <img src="images/drums.svg" class="puzzle-image" alt="" data-minitrack="1">
+                            <audio data-minitrack="1" data-minisuffix="" src="audio/mt11.wav" class="mt-minis"></audio>
+                           
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
                     </li>
                     <li class="undefined-drag">
                         <div class="img-wrapper">
-                            <img src="images/conga.svg" class="puzzle-image" alt="" data-track="2">
-                            <audio id="audio2"></audio>
+                            <img src="images/conga.svg" class="puzzle-image" alt="" data-minitrack="2">
+                            <audio data-minitrack="2" data-minisuffix="2"  src="audio/mt12.wav" class="mt-minis"></audio>
+                         
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
@@ -281,16 +307,18 @@
                   
                     <li class="undefined-drag">
                         <div class="img-wrapper">
-                            <img src="images/piano.svg" class="puzzle-image" alt="" data-track="3">
-                            <audio id="audio3"></audio>
+                            <img src="images/piano.svg" class="puzzle-image" alt="" data-minitrack="3">
+                            <audio data-minitrack="3" data-minisuffix="3"  src="audio/mt13.wav" class="mt-minis"></audio>
+                            
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
                     </li>
                     <li class="undefined-drag">
                         <div class="img-wrapper">
-                            <img src="images/guitar.svg" class="puzzle-image" alt="" data-track="4">
-                            <audio id="audio4"></audio>
+                            <img src="images/guitar.svg" class="puzzle-image" alt="" data-minitrack="4">
+                            <audio data-minitrack="4" data-minisuffix="4"  src="audio/mt14.wav" class="mt-minis"></audio>
+                           
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
@@ -298,16 +326,17 @@
                     
                     <li class="undefined-drag">
                         <div class="img-wrapper">
-                            <img src="images/drum3.svg" class="puzzle-image" alt="" data-track="5">
-                            <audio id="audio5"></audio>
+                            <img src="images/drum3.svg" class="puzzle-image" alt="" data-minitrack="5">
+                            <audio data-minitrack="5" data-minisuffix="5"  src="audio/mt15.wav" class="mt-minis"></audio>
+                           
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
                     </li>
                     <li class="undefined-drag">
                         <div class="img-wrapper">
-                            <img src="images/snare.svg" class="puzzle-image" alt="" data-track="6">
-                            <audio id="audio6"></audio>
+                            <img src="images/snare.svg" class="puzzle-image" alt="" data-minitrack="6">
+                            <audio data-minitrack="6" data-minisuffix="6" src="audio/mt16.wav" class="mt-minis"></audio>
                         </div>
                         <!-- <input type="checkbox"> -->
                         <span> Drag Me!</span>
@@ -327,13 +356,16 @@
 
     <!-- =====Footer==== -->
 
-    <footer class="grid-con">
-        <h2 class="sticky-footer col-start-1 col-span-5">All Image &copy; MusicMIxer</h2>
-        <h2 class="sticky-footer col-start-6 col-span-6">Pick Your Instruments! Use the checkbox to add your instruments to any song</h2>
-        <h2 class="sticky-footer author col-start-12 col-span-5">By: Amari &amp; Emmanuel</h2>
-        
+
+    <footer class=" grid-con" > 
+       
+        <h2 class=" sticky-footer col-start-1 col-span-2">All Image &copy; MusicMIxer  </h2>
+    
+        <h2 class="sticky-footer col-start-3 col-span-6">Select Track... Play Track..Then drag and Drop</h2>
+       <h2 class=" sticky-footer author col-start-9 col-span-3">By:Amari &amp; Emmanuel</h2>
+    
+
     </footer>
     <script src="js/main.js"></script>  
-
     </body>
 </html>
